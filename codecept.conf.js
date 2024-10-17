@@ -12,13 +12,16 @@ exports.config = {
   output: './output',
   helpers: {
     Puppeteer: {
-      url: 'https://www.saucedemo.com/',
+      url: '',
+      restart:false,
       show: true,
-      windowSize: '1200x900'
+      windowSize: '1200x900',
+      keepCookies: true,  // Memastikan cookie disimpan di antara skenario
+      keepBrowserState: true  // Memastikan keadaan browser tetap terjaga (misalnya, login tetap ada)
     }
   },
   include: {
-    I: './steps_file.js'
+    // I: './steps_file.js'
   },
   bootstrap:null,
   mocha: {},
